@@ -46,6 +46,9 @@
     <Compile Include="Crc\Crc32.cs" />
     <Compile Include="Crc\Crc64.cs" />
     <Compile Include="Crc\StringHelpers.cs" />
+    <Compile Include="NonCryptographic\APHash32.cs" />
+    <Compile Include="NonCryptographic\BkdrHash32.cs" />
+    <Compile Include="NonCryptographic\DekHash32.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
