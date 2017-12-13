@@ -61,6 +61,7 @@
     <Compile Include="NonCryptographic\RSHash32.cs" />
     <Compile Include="NonCryptographic\SaxHash32.cs" />
     <Compile Include="NonCryptographic\SdbmHash32.cs" />
+    <Compile Include="NonCryptographic\SuperFastHash32.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
