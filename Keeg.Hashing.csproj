@@ -55,6 +55,9 @@
     <Compile Include="NonCryptographic\Fnv1aHash64.cs" />
     <Compile Include="NonCryptographic\Fnv1Hash32.cs" />
     <Compile Include="NonCryptographic\Fnv1Hash64.cs" />
+    <Compile Include="NonCryptographic\JoaatHash32.cs" />
+    <Compile Include="NonCryptographic\JSHash32.cs" />
+    <Compile Include="NonCryptographic\PjwHash32.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
