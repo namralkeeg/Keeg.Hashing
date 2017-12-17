@@ -44,6 +44,7 @@
     <Compile Include="Checksum\Fletcher.cs" />
     <Compile Include="Checksum\StringHelpers.cs" />
     <Compile Include="Crc\Crc32.cs" />
+    <Compile Include="Crc\Crc32SliceBy16.cs" />
     <Compile Include="Crc\Crc64.cs" />
     <Compile Include="Crc\StringHelpers.cs" />
     <Compile Include="NonCryptographic\APHash32.cs" />
