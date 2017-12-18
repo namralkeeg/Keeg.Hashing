@@ -67,7 +67,7 @@ namespace Keeg.Hashing.Crc
         #endregion
         public override int HashSize => 32;
         private const uint DefaultPolynomial = 0xEDB88320u;
-        private const uint DefaultSeed = uint.MaxValue;
+        private const uint DefaultSeed = /*uint.MaxValue*/0;
 
         private readonly uint seed;
         private readonly uint[] table;
@@ -94,10 +94,13 @@ namespace Keeg.Hashing.Crc
 
         protected override void HashCore(byte[] array, int ibStart, int cbSize)
         {
+            uint crc = ~hash;
             for (var i = ibStart; i < ibStart + cbSize; i++)
             {
-                hash = (hash >> 8) ^ table[array[i] ^ ((byte)hash & 0xFF)];
+                crc = (crc >> 8) ^ table[array[i] ^ ((byte)crc & 0xFF)];
             }
+
+            hash = ~crc;
         }
 
         protected override byte[] HashFinal()
