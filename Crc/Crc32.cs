@@ -67,7 +67,7 @@ namespace Keeg.Hashing.Crc
         #endregion
         public override int HashSize => 32;
         private const uint DefaultPolynomial = 0xEDB88320u;
-        private const uint DefaultSeed = /*uint.MaxValue*/0;
+        private const uint DefaultSeed = 0;
 
         private readonly uint seed;
         private readonly uint[] table;
