@@ -202,10 +202,14 @@ namespace Keeg.Hashing.NonCryptographic
         // process a block of 4x8 bytes, this is the main part of the XXHash64 algorithm
         private void Process(ulong[] block, ref ulong state0, ref ulong state1, ref ulong state2, ref ulong state3)
         {
-            state0 = ProcessSingle(state0, block[0]);
-            state1 = ProcessSingle(state1, block[1]);
-            state2 = ProcessSingle(state2, block[2]);
-            state3 = ProcessSingle(state3, block[3]);
+            //state0 = ProcessSingle(state0, block[0]);
+            state0 = (state0 + block[0] * Prime2).RotateLeft(31) * Prime1;
+            //state1 = ProcessSingle(state1, block[1]);
+            state1 = (state1 + block[1] * Prime2).RotateLeft(31) * Prime1;
+            //state2 = ProcessSingle(state2, block[2]);
+            state2 = (state2 + block[2] * Prime2).RotateLeft(31) * Prime1;
+            //state3 = ProcessSingle(state3, block[3]);
+            state3 = (state3 + block[3] * Prime2).RotateLeft(31) * Prime1;
         }
     }
 }

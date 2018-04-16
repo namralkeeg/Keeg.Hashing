@@ -184,18 +184,22 @@ namespace Keeg.Hashing.NonCryptographic
             return BitConverter.GetBytes(result);
         }
 
-        private static uint ProcessSingle(uint previous, uint input)
-        {
-            return (previous + input * Prime2).RotateLeft(13) * Prime1;
-        }
+        //private static uint ProcessSingle(uint previous, uint input)
+        //{
+        //    return (previous + input * Prime2).RotateLeft(13) * Prime1;
+        //}
 
         // process a block of 4x4 bytes, this is the main part of the XXHash32 algorithm
         private void Process(uint[] block, ref uint state0, ref uint state1, ref uint state2, ref uint state3)
         {
-            state0 = ProcessSingle(state0, block[0]);
-            state1 = ProcessSingle(state1, block[1]);
-            state2 = ProcessSingle(state2, block[2]);
-            state3 = ProcessSingle(state3, block[3]);
+            //state0 = ProcessSingle(state0, block[0]);
+            state0 = (state0 + block[0] * Prime2).RotateLeft(13) * Prime1;
+            //state1 = ProcessSingle(state1, block[1]);
+            state1 = (state1 + block[1] * Prime2).RotateLeft(13) * Prime1;
+            //state2 = ProcessSingle(state2, block[2]);
+            state2 = (state2 + block[2] * Prime2).RotateLeft(13) * Prime1;
+            //state3 = ProcessSingle(state3, block[3]);
+            state3 = (state3 + block[3] * Prime2).RotateLeft(13) * Prime1;
         }
     }
 }
